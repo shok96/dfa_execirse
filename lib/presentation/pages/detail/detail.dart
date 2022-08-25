@@ -12,6 +12,7 @@ import 'package:dfa_execirse/core/common/images.dart';
 import 'package:dfa_execirse/core/common/utils.dart';
 import 'package:dfa_execirse/core/themes/base_theme.dart';
 import 'package:dfa_execirse/data/models/MPost.dart';
+import 'package:dfa_execirse/presentation/pages/detail/widgets/header_sliver.dart';
 import 'package:dfa_execirse/presentation/widgets/bottom_nav.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -30,75 +31,7 @@ class Detail extends StatelessWidget {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
-          SliverPersistentHeader(
-            pinned: true,
-            delegate: PersistentHeader(
-              widget: Stack(
-                children: <Widget>[
-                  Container(
-                    decoration: BoxDecoration(
-                        image: DecorationImage(
-                            image: AssetImage(
-                              LocalImages.news_full,
-                            ),
-                            fit: BoxFit.cover)),
-                    child: Stack(
-                      children: [
-                        Container(
-                          decoration: BoxDecoration(
-                              gradient: LinearGradient(
-                                  colors: [
-                                    ConstColors.white.withOpacity(.20),
-                                    ConstColors.black.withOpacity(.57)
-                                  ],
-                                  begin: Alignment.topCenter,
-                                  end: Alignment.bottomCenter,
-                                  stops: [.2, .8])),
-                        ),
-                        Column(
-                          children: [
-                            SizedBox(height: 100,),
-                            Expanded(
-                              child: Padding(
-                                padding: EdgeInsets.symmetric(
-                                    vertical: 12.h, horizontal: 24.w),
-                                child: Align(
-                                  alignment: Alignment.bottomCenter,
-                                  child: Text(
-                                    mPost.title,
-                                    style: sfu600(context, size: 18)
-                                        ?.copyWith(color: ConstColors.white), overflow: TextOverflow.fade,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 100.h,
-                    width: double.infinity,
-                    color: HexColor.fromHex("#2B2A28").withOpacity(.5),
-                    child: Align(
-                      alignment: Alignment.bottomCenter,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(vertical: 12.h, horizontal: 24.w),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            SvgPicture.asset(LocalIcons.back),
-                            SvgPicture.asset(LocalIcons.home),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          HeaderSliver(mPost),
           SliverList(
               delegate: SliverChildListDelegate([
             Padding(
