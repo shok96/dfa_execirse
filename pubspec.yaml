@@ -30,6 +30,17 @@ dependencies:
   flutter:
     sdk: flutter
 
+  flutter_bloc: ^8.0.1
+  freezed_annotation: ^2.1.0
+  json_annotation: ^4.6.0
+  retrofit: ^3.0.1+1
+  flutter_screenutil: ^5.5.3+2
+  get_it: ^7.2.0
+  google_fonts: ^3.0.1
+  flutter_svg: ^1.1.1+1
+  cached_network_image: ^3.2.1
+  url_launcher: ^6.1.5
+
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -38,6 +49,12 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  build_runner: ^2.2.0
+  freezed: ^2.1.0+1
+  json_serializable: ^6.3.1
+  retrofit_generator: ^4.0.3
+
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,7 +75,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
+  assets:
+    - assets/extra/
+    - assets/dev/
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
 
@@ -73,7 +92,18 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
+  fonts:
+    - family: SF UI Display
+      fonts:
+        - asset: assets/font/SFUIDisplay-Regular.ttf
+        - asset: assets/font/SFUIDisplay-Semibold.ttf
+          weight: 600
+    - family: SF UI Display Medium
+      fonts:
+        - asset: assets/font/SFUIDisplay-Medium.ttf
+    - family: SF UI Display Light
+      fonts:
+        - asset: assets/font/SFUIDisplay-Light.ttf
   #   - family: Schyler
   #     fonts:
   #       - asset: fonts/Schyler-Regular.ttf

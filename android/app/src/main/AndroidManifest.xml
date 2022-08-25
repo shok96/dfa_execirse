@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.andlancer.dfa.dfa_execirse">
+    <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="dfa_execirse"
         android:name="${applicationName}"
